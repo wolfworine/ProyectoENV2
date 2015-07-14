@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="content">
+    
+    <h:form>
+    <p:panel id="panel" header="Nueva Categoria">
+ 
+        <p:messages id="msgs" />
+ 
+        <h:panelGrid columns="3" cellpadding="3">
+
+
+
+					
+
+					
+		<p:outputLabel for="catdes" value="Categoria"/>
+					<p:inputText id="catdes" value="#{categoria.cat_descripcion}" label="Categoria"
+						required="true">
+						<f:validateLength minimum="2" />
+						<p:ajax update="msgCategoria" event="keyup" />
+					</p:inputText>
+					<p:message for="catdes" id="msgCategoria" display="icon" />
+
+
+
+				</h:panelGrid>
+ <h:inputHidden value="#{categoria.estado}"></h:inputHidden>
+        <p:commandButton value="Grabar y Listar" actionListener="#{categoria.Grabar}" action="listadocat" icon="ui-icon-check"/>
+    </p:panel>
+</h:form>
+    
+    
+
+</ui:define>
+</ui:composition>
+</html>

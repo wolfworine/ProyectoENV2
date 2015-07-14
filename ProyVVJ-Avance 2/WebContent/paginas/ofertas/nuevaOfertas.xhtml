@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="content">
+    
+    <h:form>
+    <p:panel id="panel" header="Nuevo Oferta">
+ 
+        <p:messages id="msgs" />
+ 
+        <h:panelGrid columns="3" cellpadding="5">
+
+
+					<p:outputLabel for="descripcion" value="Descripcion: " />
+					<p:inputText id="descripcion" value="#{oferta.of_descripcion}"
+						required="true" label="Descripcion">
+						<f:validateLength minimum="2" />
+					</p:inputText>
+					<p:message for="descripcion" display="icon" />
+
+					<p:outputLabel for="fechaini" value="Fecha Inicio de la Oferta: " />
+					<p:calendar id="fechaini" value="#{oferta.of_fechaini}" pattern="MM/dd/yyyy" 
+						required="true" label="Fecha Inicio" /> 
+					<p:message for="fechaini" display="icon" />
+						
+					<p:outputLabel for="fechafin" value="Fecha Fin de la Oferta: " />
+					<p:calendar id="fechafin" value="#{oferta.of_fechafin}" pattern="MM/dd/yyyy"
+						required="true" label="Fecha Fin" /> 
+					<p:message for="fechafin" display="icon" />
+
+
+				</h:panelGrid>
+		 <h:inputHidden value="#{usuario.estado}"></h:inputHidden>
+        <p:commandButton value="Grabar y Listar" actionListener="#{oferta.Grabar}" action="listadoOfertas" icon="ui-icon-check"/>
+    </p:panel>
+</h:form>
+    
+    
+
+</ui:define>
+</ui:composition>
+</html>

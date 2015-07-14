@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"  >
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="content">
+    
+    	<h:form>
+				
+				<p:dataTable id="tbl" value="#{categoria.categoriamodel}" var="um"
+                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                 paginator="true" rows="10" style="margin-bottom:20px">
+ 
+        <f:facet name="{Exporters}">
+        <h:commandLink>
+                <p:graphicImage name="/demo/images/excel.png" width="24"/>
+                <p:dataExporter type="xls" target="tbl" fileName="cars" />
+            </h:commandLink>
+ 
+            <h:commandLink>
+                <p:graphicImage name="/demo/images/pdf.png" width="24"/>
+                <p:dataExporter type="pdf" target="tbl" fileName="cars"/>
+            </h:commandLink>
+ 
+            <h:commandLink>
+                <p:graphicImage name="/demo/images/csv.png" width="24"/>
+                <p:dataExporter type="csv" target="tbl" fileName="cars" />
+            </h:commandLink>
+ 
+            <h:commandLink>
+                <p:graphicImage name="/demo/images/xml.png" width="24"/>
+                <p:dataExporter type="xml" target="tbl" fileName="cars" />
+            </h:commandLink>
+        </f:facet>
+        
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="ID" />
+            </f:facet>
+            <h:outputText value="#{um.cat_id}" />
+        </p:column>
+        
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="Categoria" />
+            </f:facet>
+            <h:outputText value="#{um.cat_descripcion}" />
+        </p:column>
+        
+        
+		<p:column>
+            <f:facet name="header">
+                <h:outputText value="Editar" />
+            </f:facet>
+           <h:commandLink value="Modificar"
+								actionListener="#{categoria.Buscar}" action="nuevo">
+								<f:attribute name="unom" value="#{um.catdes}"></f:attribute>
+							</h:commandLink>
+        </p:column>
+        
+        <p:column>
+            <f:facet name="header">
+                <h:outputText value="Eliminar" />
+            </f:facet>
+            <h:commandLink value="Eliminar"
+								actionListener="#{categoria.Eliminar}" action="listado">
+								<f:attribute name="unom" value="#{um.catdes}"></f:attribute>
+							</h:commandLink>
+        </p:column>
+
+					</p:dataTable>
+
+					
+
+					<p:outputLabel value="#{categoria.mensaje}"></p:outputLabel>
+
+				</h:form>
+    
+    
+
+</ui:define>
+</ui:composition>
+</html>

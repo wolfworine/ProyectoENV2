@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+	<managed-bean>
+		<managed-bean-name>usuario</managed-bean-name>
+		<managed-bean-class>pe.gmp.managedbean.Usuario</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>nivel</managed-bean-name>
+		<managed-bean-class>pe.gmp.managedbean.Nivel</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>categoria</managed-bean-name>
+		<managed-bean-class>pe.gmp.managedbean.Categoria</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+<!-- JAIR INICIO -->	
+	<managed-bean>
+		<managed-bean-name>oferta</managed-bean-name>
+		<managed-bean-class>pe.gmp.managedbean.Oferta</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>juego</managed-bean-name>
+		<managed-bean-class>pe.gmp.managedbean.Juego</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+<!-- JAIR FIN -->
+	<navigation-rule>
+		<display-name>login.xhtml</display-name>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/paginas/usuario/listado.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>/error/404.xhtml</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+	
+	<navigation-rule>
+        <display-name>inicio</display-name>
+        <from-view-id>/*</from-view-id>
+        <navigation-case>
+            <from-outcome>nuevo</from-outcome>
+            <to-view-id>/paginas/usuario/nuevo.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>listado</from-outcome>
+            <to-view-id>/paginas/usuario/listado.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case> 
+			<from-outcome>nuevocat</from-outcome> 
+			<to-view-id>/paginas/categoria/nuevocat.xhtml</to-view-id> 
+		</navigation-case> 
+		<navigation-case> 
+			<from-outcome>listadocat</from-outcome> 
+			<to-view-id>/paginas/categoria/listadocat.xhtml</to-view-id> 
+		</navigation-case> 
+        
+        <!-- JAIR INICIO -->
+        <navigation-case>
+            <from-outcome>nuevaOferta</from-outcome>
+            <to-view-id>/paginas/ofertas/nuevaOfertas.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>listadoOfertas</from-outcome>
+            <to-view-id>/paginas/ofertas/listadoOfertas.xhtml</to-view-id>
+        </navigation-case>     
+        <navigation-case>
+            <from-outcome>nuevoJuego</from-outcome>
+            <to-view-id>/paginas/juegos/nuevoJuego.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>listadoJuego</from-outcome>
+            <to-view-id>/paginas/juegos/listadoJuego.xhtml</to-view-id>
+        </navigation-case>     
+        <!-- JAIR FIN -->
+        <navigation-case>
+            <from-outcome>volver</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+</navigation-rule>
+
+    <application>
+        <action-listener>org.primefaces.application.DialogActionListener</action-listener>
+        <navigation-handler>org.primefaces.application.DialogNavigationHandler</navigation-handler>
+        <view-handler>org.primefaces.application.DialogViewHandler</view-handler>
+        <navigation-handler>org.primefaces.mobile.application.MobileNavigationHandler</navigation-handler>
+        <locale-config>
+            <default-locale>en</default-locale>
+        </locale-config>
+        <el-resolver>org.primefaces.application.exceptionhandler.PrimeExceptionHandlerELResolver</el-resolver>
+        <resource-bundle>
+            <base-name>build</base-name>
+            <var>build</var>
+        </resource-bundle>
+    </application>
+    
+    <converter>
+        <converter-id>theme</converter-id>
+        <converter-class>org.primefaces.showcase.convert.ThemeConverter</converter-class>
+    </converter>
+    
+    <factory>
+        <exception-handler-factory>org.primefaces.application.exceptionhandler.PrimeExceptionHandlerFactory</exception-handler-factory>
+    </factory>
+    
+</faces-config>

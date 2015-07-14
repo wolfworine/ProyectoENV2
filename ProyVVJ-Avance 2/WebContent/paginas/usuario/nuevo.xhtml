@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="content">
+    
+    <h:form>
+    <p:panel id="panel" header="Nuevo Usuario">
+ 
+        <p:messages id="msgs" />
+ 
+        <h:panelGrid columns="3" cellpadding="5">
+
+
+
+					
+
+					<p:outputLabel for="usuario" value="Usuario:" />
+					<p:inputText id="usuario" value="#{usuario.usernom}"
+						required="true" label="Usuario">
+						<f:validateLength minimum="2" />
+					</p:inputText>
+					<p:message for="usuario" display="icon" />
+
+					<p:outputLabel for="clave" value="Clave:" />
+					<p:inputText id="clave" value="#{usuario.userpwd}" label="Clave"
+						required="true">
+						<f:validateLength minimum="2" />
+						<p:ajax update="msgClave" event="keyup" />
+					</p:inputText>
+					<p:message for="clave" id="msgClave" display="icon" />
+
+					<p:outputLabel for="nombre" value="Nombre" />
+					<p:inputText id="nombre" value="#{usuario.nombre}" label="Nombre"
+						required="true">
+						<f:validateLength minimum="2" />
+						<p:ajax update="msgNombre" event="keyup" />
+					</p:inputText>
+					<p:message for="nombre" id="msgNombre" display="icon" />
+
+					<p:outputLabel for="correo" value="Correo:" />
+					<p:inputText id="correo" value="#{usuario.correo}" label="Correo"
+						required="true" requiredMessage="Debe Ingresar Correo Electrónico."
+		validatorMessage="Error de Formato de Email">
+						<f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+ 
+					</p:inputText>
+					<p:message for="correo" id="msgCorreo" display="icon" />
+					
+					<p:outputLabel value="Nivel:" />
+					<p:selectOneMenu value="#{usuario.nivel}">
+						<f:selectItems value="#{nivel.nivellista}"></f:selectItems>
+					</p:selectOneMenu>
+					<p:outputLabel  />
+
+
+
+
+
+				</h:panelGrid>
+ <h:inputHidden value="#{usuario.estado}"></h:inputHidden>
+        <p:commandButton value="Grabar y Listar" actionListener="#{usuario.Grabar}" action="listado" icon="ui-icon-check"/>
+    </p:panel>
+</h:form>
+    
+    
+
+</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="content">
+    
+    <h:form>
+    <p:panel id="panel" header="Nuevo Juego">
+ 
+        <p:messages id="msgs" />
+ 
+        <h:panelGrid columns="3" cellpadding="5">
+
+
+					<p:outputLabel for="titulo" value="Titulo: " />
+					<p:inputText id="titulo" value="#{juego.vj_titulo}"
+						required="true" label="Titulo">
+						<f:validateLength minimum="2" />
+					</p:inputText>
+					<p:message for="titulo" display="icon" />
+
+					<p:outputLabel for="descripcion" value="Descripcion: " />
+					<p:inputText id="descripcion" value="#{juego.vj_descripcion}" label="Descripcion"
+						required="true">
+						<f:validateLength minimum="2" />
+						<p:ajax update="msgDescripcion" event="keyup" />
+					</p:inputText>
+					<p:message for="descripcion" id="msgDescripcion" display="icon" />
+
+					<p:outputLabel for="stock" value="Stock: " />
+					<p:inputText id="stock" value="#{juego.vj_stock}" label="Stock"
+						required="true">
+						<f:validateLength minimum="2" />
+						<p:ajax update="msgStock" event="keyup" />
+					</p:inputText>
+					<p:message for="stock" id="msgStock" display="icon" />
+
+					<p:outputLabel for="precio" value="Precio: " />
+					<p:inputText id="precio" value="#{juego.vj_precio}" label="Precio"
+						required="true">
+						<f:validateLength minimum="2" />
+						<p:ajax update="msgPrecio" event="keyup" />
+					</p:inputText>
+					<p:message for="precio" id="msgPrecio" display="icon" />
+					
+					<p:outputLabel for="precioDescuento" value="Precio Descuento: " />
+					<p:inputText id="precioDescuento" value="#{juego.vj_precio_descuento}" label="Precio Descuento"
+						required="true">
+						<f:validateLength minimum="2" />
+						<p:ajax update="msgPrecioDescuento" event="keyup" />
+					</p:inputText>
+					<p:message for="precioDescuento" id="msgPrecioDescuento" display="icon" />
+
+
+				</h:panelGrid>
+		 <h:inputHidden value="#{usuario.estado}"></h:inputHidden>
+        <p:commandButton value="Grabar y Listar" actionListener="#{juego.Grabar}" action="listadoJuego" icon="ui-icon-check"/>
+    </p:panel>
+</h:form>
+    
+    
+
+</ui:define>
+</ui:composition>
+</html>
