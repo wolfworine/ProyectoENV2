@@ -7,7 +7,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	 xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="/WEB-INF/webtemplates/BasicTemplate.xhtml">
+<ui:composition template="/WEB-INF/webtemplates/BasicTemplate2.xhtml">
 
 	<ui:define name="content">
      			<main class="main-content">
@@ -19,12 +19,12 @@
 								<div class="col-sm-6 col-md-4">
 									<div class="product-images">
 										<figure class="large-image">
-											<a href="resources/website/dummy/image-1.jpg"><img src="resources/website/dummy/single-game-cover.jpg" alt=""></a>
+											<a href="#{request.contextPath}/resources/website/dummy/image-1.jpg"><img src="#{request.contextPath}/resources/website/dummy/single-game-cover.jpg" alt=""/></a>
 										</figure>
 										<div class="thumbnails">
-											<a href="resources/website/dummy/image-2.jpg"><img src="resources/website/dummy/small-thumb-1.jpg" alt=""></a>
-											<a href="resources/website/dummy/image-3.jpg"><img src="resources/website/dummy/small-thumb-2.jpg" alt=""></a>
-											<a href="resources/website/dummy/image-4.jpg"><img src="resources/website/dummy/small-thumb-3.jpg" alt=""></a>
+											<a href="#{request.contextPath}/resources/website/dummy/image-2.jpg"><img src="#{request.contextPath}/resources/website/dummy/small-thumb-1.jpg" alt=""/></a>
+											<a href="#{request.contextPath}/resources/website/dummy/image-3.jpg"><img src="#{request.contextPath}/resources/website/dummy/small-thumb-2.jpg" alt=""/></a>
+											<a href="#{request.contextPath}/resources/website/dummy/image-4.jpg"><img src="#{request.contextPath}/resources/website/dummy/small-thumb-3.jpg" alt=""/></a>
 										</div>
 									</div>
 								</div>
@@ -44,7 +44,7 @@
 												<option value="2">2</option>
 												<option value="3">3</option>
 											</select>
-											<input type="submit" value="Add to cart">
+											<input type="submit" value="Add to cart"/>
 										</form>
 
 										<div class="social-links square">
@@ -67,7 +67,7 @@
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<img src="resources/website/dummy/game-1.jpg" alt="Game 1">
+											<img src="#{request.contextPath}/resources/website/dummy/game-1.jpg" alt="Game 1"/>
 										</div>
 										<h3 class="product-title"><a href="#">Alpha Protocol</a></h3>
 										<small class="price">$20.00</small>
@@ -80,7 +80,7 @@
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<img src="resources/website/dummy/game-2.jpg" alt="Game 2">
+											<img src="#{request.contextPath}/resources/website/dummy/game-2.jpg" alt="Game 2"/>
 										</div>
 										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
 										<small class="price">$20.00</small>
@@ -93,7 +93,7 @@
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<img src="resources/website/dummy/game-3.jpg" alt="Game 3">
+											<img src="#{request.contextPath}/resources/website/dummy/game-3.jpg" alt="Game 3"/>
 										</div>
 										<h3 class="product-title"><a href="#">Need for Speed rivals</a></h3>
 										<small class="price">$20.00</small>
@@ -106,7 +106,7 @@
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
-											<img src="resources/website/dummy/game-4.jpg" alt="Game 4">
+											<img src="#{request.contextPath}/resources/website/dummy/game-4.jpg" alt="Game 4"/>
 										</div>
 										<h3 class="product-title"><a href="#">Big game hunter</a></h3>
 										<small class="price">$20.00</small>
