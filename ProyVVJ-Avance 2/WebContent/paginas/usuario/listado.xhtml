@@ -77,20 +77,20 @@
             <f:facet name="header">
                 <h:outputText value="Editar" />
             </f:facet>
-           <h:commandLink value="Modificar"
+           <p:commandLink   styleClass="fa fa-edit" 
 								actionListener="#{usuario.Buscar}" action="nuevo">
 								<f:attribute name="unom" value="#{um.usernom}"></f:attribute>
-							</h:commandLink>
+							</p:commandLink>
         </p:column>
         
         <p:column>
             <f:facet name="header">
                 <h:outputText value="Eliminar" />
             </f:facet>
-            <h:commandLink value="Eliminar"
+            <p:commandLink value="Eliminar" styleClass="ui-icon ui-icon-trash"
 								actionListener="#{usuario.Eliminar}" action="listado">
 								<f:attribute name="unom" value="#{um.usernom}"></f:attribute>
-							</h:commandLink>
+							</p:commandLink>
         </p:column>
 
 					</p:dataTable>

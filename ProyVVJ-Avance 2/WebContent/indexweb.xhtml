@@ -66,63 +66,78 @@
 								<h2 class="section-title">New Products</h2>
 								<a href="#" class="all">Show All</a>
 							</header>
+							
+							
 
 							<div class="product-list">
+							
+							<p:dataList value="#{juego.juegomodel}" var="um" type="definition">
+							
+							
 								<div class="product">
 									<div class="inner-product">
 										<div class="figure-image">
 											<a href="#{request.contextPath}/website/single/single.xhtml"><img src="resources/website/dummy/game-1.jpeg" alt="Game 1"/></a>
 										</div>
-										<h3 class="product-title"><a href="#">Alpha Protocol</a></h3>
-										<small class="price">$19.00</small>
-										<p>Está ambientado en un futuro cercano en el que el jugador tiene...</p>
+										<h3 class="product-title">#{um.vj_titulo}</h3>
+										<small class="price">#{um.vj_precio}</small>
+										<p>#{um.vj_descripcion}</p>
 										<a href="#{request.contextPath}/website/cart/cart.xhtml" class="button">Add to cart</a>
 										<a href="#" class="button muted">Read Details</a>
 									</div>
-								</div> <!-- .product -->
-
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="#{request.contextPath}/website/single/single.xhtml"><img src="resources/website/dummy/game-2.jpeg" alt="Game 2"/></a>
-										</div>
-										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
-										<small class="price">$19.00</small>
-										<p>Quinta entrega de la afamada saga de juegos sandbox de Rockstar Games...</p>
-										<a href="#{request.contextPath}/website/cart/cart.xhtml" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
 									</div>
+									
+									 </p:dataList>
+									
 								</div> <!-- .product -->
 
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="#{request.contextPath}/website/single/single.xhtml"><img src="resources/website/dummy/game-3.jpeg" alt="Game 3"/></a>
-										</div>
-										<h3 class="product-title"><a href="#">Need for Speed rivals</a></h3>
-										<small class="price">$19.00</small>
-										<p>En la piel de un corredor ilegal o un policía, Need for Speed: Rivals...</p>
-										<a href="#{request.contextPath}/website/cart/cart.xhtml" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
+<!-- 								<div class="product"> -->
+<!-- 									<div class="inner-product"> -->
+<!-- 										<div class="figure-image"> -->
+<!-- 											<a href="#{request.contextPath}/website/single/single.xhtml"><img src="resources/website/dummy/game-2.jpeg" alt="Game 2"/></a> -->
+<!-- 										</div> -->
+<!-- 										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3> -->
+<!-- 										<small class="price">$19.00</small> -->
+<!-- 										<p>Quinta entrega de la afamada saga de juegos sandbox de Rockstar Games...</p> -->
+<!-- 										<a href="#{request.contextPath}/website/cart/cart.xhtml" class="button">Add to cart</a> -->
+<!-- 										<a href="#" class="button muted">Read Details</a> -->
+<!-- 									</div> -->
+<!-- 								</div> .product -->
 
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="#{request.contextPath}/website/single/single.xhtml"><img src="resources/website/dummy/game-4.jpeg" alt="Game 4"/></a>
-										</div>
-										<h3 class="product-title"><a href="#">Big game hunter</a></h3>
-										<small class="price">$19.00</small>
-										<p>Una nueva entrega de la saga que nos lleva a cazar los animales más exóticos...</p>
-										<a href="#{request.contextPath}/website/cart/cart.xhtml" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
+<!-- 								<div class="product"> -->
+<!-- 									<div class="inner-product"> -->
+<!-- 										<div class="figure-image"> -->
+<!-- 											<a href="#{request.contextPath}/website/single/single.xhtml"><img src="resources/website/dummy/game-3.jpeg" alt="Game 3"/></a> -->
+<!-- 										</div> -->
+<!-- 										<h3 class="product-title"><a href="#">Need for Speed rivals</a></h3> -->
+<!-- 										<small class="price">$19.00</small> -->
+<!-- 										<p>En la piel de un corredor ilegal o un policía, Need for Speed: Rivals...</p> -->
+<!-- 										<a href="#{request.contextPath}/website/cart/cart.xhtml" class="button">Add to cart</a> -->
+<!-- 										<a href="#" class="button muted">Read Details</a> -->
+<!-- 									</div> -->
+<!-- 								</div> .product -->
 
-							</div> <!-- .product-list -->
+<!-- 								<div class="product"> -->
+<!-- 									<div class="inner-product"> -->
+<!-- 										<div class="figure-image"> -->
+<!-- 											<a href="#{request.contextPath}/website/single/single.xhtml"><img src="resources/website/dummy/game-4.jpeg" alt="Game 4"/></a> -->
+<!-- 										</div> -->
+<!-- 										<h3 class="product-title"><a href="#">Big game hunter</a></h3> -->
+<!-- 										<small class="price">$19.00</small> -->
+<!-- 										<p>Una nueva entrega de la saga que nos lleva a cazar los animales más exóticos...</p> -->
+<!-- 										<a href="#{request.contextPath}/website/cart/cart.xhtml" class="button">Add to cart</a> -->
+<!-- 										<a href="#" class="button muted">Read Details</a> -->
+<!-- 									</div> -->
+<!-- 								</div> .product -->
+
+<!-- 							</div> .product-list -->
+							
+							
 
 						</section>
+						
+						
+						
 
 						<section>
 							<header>
@@ -188,6 +203,56 @@
 								</div> <!-- .product -->
 								
 							</div> <!-- .product-list -->
+							
+							
+							
+<!-- 				<p:dataList value="#{juego.juegomodel}" var="um" type="definition"> -->
+       
+<!--         <p:column> -->
+<!--             <f:facet name="header"> -->
+<!--                 <h:outputText value="Titulo" /> -->
+<!--             </f:facet> -->
+<!--             <h:outputText value="#{um.vj_titulo}" /> -->
+<!--         </p:column> -->
+        
+<!--         <p:column> -->
+<!--             <f:facet name="header"> -->
+<!--                 <h:outputText value="Descripcion" /> -->
+<!--             </f:facet> -->
+<!--             <h:outputText value="#{um.vj_descripcion}" /> -->
+<!--         </p:column> -->
+        
+<!--         <p:column> -->
+<!--             <f:facet name="header"> -->
+<!--                 <h:outputText value="Stock" /> -->
+<!--             </f:facet> -->
+<!--             <h:outputText value="#{um.vj_stock}" /> -->
+<!--         </p:column> -->
+        
+<!--         <p:column> -->
+<!--             <f:facet name="header"> -->
+<!--                 <h:outputText value="Precio" /> -->
+<!--             </f:facet> -->
+<!--             <h:outputText value="#{um.vj_precio}" /> -->
+<!--         </p:column> -->
+        
+<!--         <p:column> -->
+<!--             <f:facet name="header"> -->
+<!--                 <h:outputText value="Precio con Descuento" /> -->
+<!--             </f:facet> -->
+<!--             <h:outputText value="#{um.vj_precio_descuento}" /> -->
+<!--         </p:column> -->
+  
+<!--         <f:facet name="description"> -->
+<!--             <p:graphicImage name="demo/images/car/#{car.brand}.gif"/>  -->
+<!--         </f:facet>			 -->
+							
+	
+<!--     </p:dataList> -->
+							
+							
+							
+							
 
 						</section>
 					</div>

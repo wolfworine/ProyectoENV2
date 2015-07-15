@@ -47,6 +47,8 @@
 
 	</navigation-rule>
 	
+	
+	
 	<navigation-rule>
         <display-name>inicio</display-name>
         <from-view-id>/*</from-view-id>

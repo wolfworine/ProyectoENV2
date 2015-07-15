@@ -61,6 +61,7 @@ public class Juego {
 		// usuario.
 		objJuego = juegoi.BuscarJuego(objJuego);
 		if (objJuego != null) {
+			setVj_id(objJuego.getVj_id());
 			setVj_titulo(objJuego.getVj_titulo());
 			setVj_descripcion(objJuego.getVj_descripcion());
 			setVj_stock(objJuego.getVj_stock());
@@ -74,6 +75,7 @@ public class Juego {
 
 		// Obtenemos por face los campos llenamos en nuevo.xhtml
 		JuegoJPA objJuego = new JuegoJPA();
+//		objJuego.setVj_id(getVj_id());
 		objJuego.setVj_titulo(getVj_titulo());
 		objJuego.setVj_descripcion(getVj_descripcion());
 		objJuego.setVj_stock(getVj_stock());
